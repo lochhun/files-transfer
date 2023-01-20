@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<title>ELearning Course Page | Student Registration</title>
+</head>
+
+<body>
+	<section class="vh-100" style="background-color: #508bfc; height: 100vh;">
+		<div class="container h-100">
+			<div class="row d-flex justify-content-center align-items-center h-100">
+				<div class="col-12 col-md-8 col-lg-6 col-xl-5">
+					<div class="card shadow-2-strong" style="border-radius: 1rem;">
+						<div class="card-body p-5 text-center">
+
+							<h3 class="mb-5 h1 font-weight-bold">Student Register</h3>
+							<form method="post" id="register-form">
+								<div class="form-outline mb-4">
+									<input type="text" id="username" name="username" class="form-control form-control-lg"
+										placeholder="Username" required autocomplete="off" />
+								</div>
+
+								<div class="form-outline mb-4">
+									<input type="password" id="password" name="password" class="form-control form-control-lg"
+										placeholder="Password" required autocomplete="off" />
+								</div>
+
+								<div class="form-outline mb-4">
+									<input type="password" id="confirmPassword" name="confirmPassword"
+										class="form-control form-control-lg" placeholder="Confirm Password" required autocomplete="off" />
+								</div>
+
+								<input class="btn btn-primary btn-lg btn-block" type="submit" value="register" />
+
+								<div class="mt-4">
+									<p class="text-danger small" id="register-error">
+										<% if (typeof message !="undefined" ) { %>
+											<%=message%>
+												<% }else { %>
+													Username cannot be empty. <br>
+													Enter valid username. <br>
+													Password cannot be empty. <br>
+													Password must be 6 to 20 characters long with minimum of 1 number, 1 uppercase and 1
+													lowercase.
+													<% }%>
+									</p>
+								</div>
+
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+
+	<!-- Login Validation -->
+	<script src="/static/javascripts/registerValidation.js"></script>
+</body>
+
+</html>

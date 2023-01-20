@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<title>ELearning Course Page | Student Dashboard</title>
+</head>
+
+<body>
+	<nav class="navbar navbar-dark bg-dark">
+		<a class="navbar-brand" href="/student">Course Page</a>
+		<ul class="nav nav-pills">
+			<li class="nav-item">
+				<a class="nav-link mx-3 active btn btn-info" href="/student/">Dashboard</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link mx-3 btn btn-light" href="/student/logout">Logout</a>
+			</li>
+		</ul>
+	</nav>
+	<br>
+	<div class="row p-2" style="width: 100vw;margin: 0;">
+		<%files.forEach(file=> {
+			%>
+			<div class="col-4 p-2">
+				<div class="card border-0 rounded bg-light">
+					<div class="card-body">
+						<h5 class="card-title mb-4 h3">
+							<%= file.filename %>
+						</h5>
+						<p class="card-text mb-4">
+							<%= file.facultyName[0].username %>
+						</p>
+						<p class="card-text mb-4">
+							<%= (file.size/1024).toFixed(2) %> Kb
+						</p>
+						<a href="/download/<%= file._id %>" class="card-link btn btn-dark">Download</a>
+					</div>
+				</div>
+			</div>
+			<% }); %>
+	</div>
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
